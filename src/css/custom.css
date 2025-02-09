@@ -1,0 +1,41 @@
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #5e81ac;
+  --ifm-color-primary-dark: #4c7295;
+  --ifm-color-primary-darker: #466b8c;
+  --ifm-color-primary-darkest: #3b5b76;
+  --ifm-color-primary-light: #7393be;
+  --ifm-color-primary-lighter: #88a2c8;
+  --ifm-color-primary-lightest: #9db4d3;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Additional Docusaurus variables */
+  --ifm-background-color: #eceff4;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-footer-background-color: #e5e9f0;
+  --ifm-menu-color: #2e3440;
+  --ifm-link-color: #5e81ac;
+  --ifm-heading-color: #2e3440;
+  --ifm-font-color-base: #3b4252;
+}
+
+[data-theme="dark"] {
+  --ifm-color-primary: #81a1c1;
+  --ifm-color-primary-dark: #6d8eb2;
+  --ifm-color-primary-darker: #5e81ac;
+  --ifm-color-primary-darkest: #4c7295;
+  --ifm-color-primary-light: #94b0cc;
+  --ifm-color-primary-lighter: #a5bdd4;
+  --ifm-color-primary-lightest: #b8ccde;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* Additional Docusaurus variables for dark mode */
+  --ifm-background-color: #2e3440;
+  --ifm-navbar-background-color: #3b4252;
+  --ifm-footer-background-color: #3b4252;
+  --ifm-menu-color: #e5e9f0;
+  --ifm-link-color: #88c0d0;
+  --ifm-heading-color: #eceff4;
+  --ifm-font-color-base: #e5e9f0;
+}
