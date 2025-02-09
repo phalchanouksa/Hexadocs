@@ -1,6 +1,6 @@
 ---
 title: Basic Markdown
-sidebar_position: 2
+# sidebar_position: 2
 toc_min_heading_level: 2 #to adjust right toc
 toc_max_heading_level: 6
 ---

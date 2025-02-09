@@ -1,6 +1,6 @@
 ---
 title: Tab test
-sidebar_position: 5
+# sidebar_position: 5
 ---
 
 import Tabs from "@theme/Tabs"

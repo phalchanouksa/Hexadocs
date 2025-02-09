@@ -1,6 +1,6 @@
 ---
 title: MDX
-sidebar_position: 3
+# sidebar_position: 3
 ---
 
 <!-- export const Tag = ({children, color}) => (

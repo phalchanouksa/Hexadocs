@@ -1,6 +1,6 @@
 ---
 title: Our first page
-sidebar_position: 1
+# sidebar_position: 1
 ---
 
 # single page

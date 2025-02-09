@@ -1,6 +1,6 @@
 ---
 title: Alert test
-sidebar_position: 5
+# sidebar_position: 50
 ---
 
 :::tip

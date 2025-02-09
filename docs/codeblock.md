@@ -1,6 +1,6 @@
 ---
 title: Codeblock
-sidebar_position: 0
+# sidebar_position: 0
 ---
 
 ```jsx title="Coode"

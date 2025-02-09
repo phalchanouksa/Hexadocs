@@ -16,7 +16,10 @@ export default function Home() {
                 <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
                 <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
                 <div className={styles.heroButtons}>
-                  <Link className={styles.primaryButton} to="/docs/intro">
+                  <Link
+                    className={styles.primaryButton}
+                    to="/docs/category/getting-started"
+                  >
                     Get Started
                   </Link>
                   <Link
