@@ -1,44 +1,38 @@
-import clsx from "clsx";
+import React from "react";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
-
-import Heading from "@theme/Heading";
 import styles from "./index.module.css";
-
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
-  return (
-    <header className={clsx("hero hero--primary", styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro"
-          >
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
-    >
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
+    <Layout title={siteConfig.title} description={siteConfig.tagline}>
+      <main className={styles.main}>
+        <section className={styles.heroBanner}>
+          <div className="container">
+            <div className={styles.heroContent}>
+              <div className={styles.heroText}>
+                <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
+                <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
+                <div className={styles.heroButtons}>
+                  <Link className={styles.primaryButton} to="/docs/intro">
+                    Get Started
+                  </Link>
+                  <Link
+                    className={styles.secondaryButton}
+                    to="https://github.com/your-repo"
+                  >
+                    View on GitHub
+                  </Link>
+                </div>
+              </div>
+              <div className={styles.heroImage}>
+                <img src="img/logo.png" alt="Hero" />
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </Layout>
   );

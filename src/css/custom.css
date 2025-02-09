@@ -1,5 +1,5 @@
-/* You can override the default Infima variables here. */
 :root {
+  /* Nord Light Theme - Primary Colors */
   --ifm-color-primary: #5e81ac;
   --ifm-color-primary-dark: #4c7295;
   --ifm-color-primary-darker: #466b8c;
@@ -7,10 +7,19 @@
   --ifm-color-primary-light: #7393be;
   --ifm-color-primary-lighter: #88a2c8;
   --ifm-color-primary-lightest: #9db4d3;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
-  /* Additional Docusaurus variables */
+  /* Nord Light Theme - Frost Colors for Accents */
+  --ifm-color-success: #a3be8c;
+  --ifm-color-info: #88c0d0;
+  --ifm-color-warning: #ebcb8b;
+  --ifm-color-danger: #bf616a;
+
+  /* Typography */
+  --ifm-code-font-size: 95%;
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.65;
+
+  /* Light Theme - Background and Text Colors */
   --ifm-background-color: #eceff4;
   --ifm-navbar-background-color: #ffffff;
   --ifm-footer-background-color: #e5e9f0;
@@ -18,24 +27,126 @@
   --ifm-link-color: #5e81ac;
   --ifm-heading-color: #2e3440;
   --ifm-font-color-base: #3b4252;
+
+  /* Code Blocks */
+  --docusaurus-highlighted-code-line-bg: rgba(46, 52, 64, 0.1);
+  --ifm-code-background: #e5e9f0;
+
+  /* Component Specific */
+  --ifm-navbar-shadow: 0 1px 2px 0 rgba(46, 52, 64, 0.1);
+  --ifm-toc-border-color: #d8dee9;
+  --ifm-hr-border-color: #d8dee9;
 }
 
 [data-theme="dark"] {
-  --ifm-color-primary: #81a1c1;
-  --ifm-color-primary-dark: #6d8eb2;
+  /* Nord Dark Theme - Primary Colors */
+  --ifm-color-primary: #88c0d0;
+  --ifm-color-primary-dark: #81a1c1;
   --ifm-color-primary-darker: #5e81ac;
   --ifm-color-primary-darkest: #4c7295;
-  --ifm-color-primary-light: #94b0cc;
-  --ifm-color-primary-lighter: #a5bdd4;
-  --ifm-color-primary-lightest: #b8ccde;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary-light: #8fbcbb;
+  --ifm-color-primary-lighter: #a3be8c;
+  --ifm-color-primary-lightest: #b48ead;
 
-  /* Additional Docusaurus variables for dark mode */
+  /* Nord Dark Theme - Frost Colors for Accents */
+  --ifm-color-success: #a3be8c;
+  --ifm-color-info: #88c0d0;
+  --ifm-color-warning: #ebcb8b;
+  --ifm-color-danger: #bf616a;
+
+  /* Dark Theme - Background and Text Colors */
   --ifm-background-color: #2e3440;
   --ifm-navbar-background-color: #3b4252;
   --ifm-footer-background-color: #3b4252;
-  --ifm-menu-color: #e5e9f0;
+  --ifm-menu-color: #eceff4;
   --ifm-link-color: #88c0d0;
   --ifm-heading-color: #eceff4;
   --ifm-font-color-base: #e5e9f0;
+
+  /* Code Blocks */
+  --docusaurus-highlighted-code-line-bg: rgba(236, 239, 244, 0.1);
+  --ifm-code-background: #434c5e;
+
+  /* Component Specific */
+  --ifm-navbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  --ifm-toc-border-color: #434c5e;
+  --ifm-hr-border-color: #434c5e;
+}
+
+/* Additional Styles for Better UI */
+.navbar {
+  backdrop-filter: blur(10px);
+}
+
+.footer {
+  border-top: 1px solid var(--ifm-toc-border-color);
+}
+
+.table-of-contents {
+  font-size: 0.9em;
+}
+
+.markdown > h2 {
+  border-bottom: 1px solid var(--ifm-hr-border-color);
+  padding-bottom: 0.3em;
+}
+
+.theme-doc-sidebar-menu {
+  font-size: 0.95em;
+}
+
+.theme-code-block {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Fix sidebar toggle button */
+.navbar__toggle {
+  color: var(--ifm-navbar-link-color);
+  padding: 8px;
+}
+
+/* Ensure main content fills viewport */
+main {
+  min-height: calc(100vh - var(--ifm-navbar-height));
+}
+
+/* Fix sidebar responsiveness */
+@media (max-width: 996px) {
+  .navbar__toggle {
+    display: block !important;
+    position: relative;
+    z-index: 100;
+  }
+
+  .navbar-sidebar {
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-sidebar--show {
+    transform: translateX(0);
+  }
+
+  .menu {
+    padding: 1rem;
+  }
+
+  .navbar-sidebar--show ~ .navbar__toggle {
+    visibility: hidden;
+  }
+}
+
+/* Fix content height on mobile */
+@media (max-width: 996px) {
+  .main-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
+  }
 }
