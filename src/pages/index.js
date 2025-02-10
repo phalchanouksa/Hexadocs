@@ -24,7 +24,7 @@ export default function Home() {
                   </Link>
                   <Link
                     className={styles.secondaryButton}
-                    to="https://github.com/your-repo"
+                    to="https://github.com/phalchanouksa/Hexadocs"
                   >
                     View on GitHub
                   </Link>
