@@ -1,4 +1,0 @@
----
-Name: Ouksa
-id: algolia
----

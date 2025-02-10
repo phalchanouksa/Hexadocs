@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[635],{8728:e=>{e.exports=JSON.parse('{"categoryGeneratedIndex":{"title":"Getting Started","slug":"/category/getting-started","permalink":"/docs/category/getting-started","sidebar":"tutorialSidebar","navigation":{"next":{"title":"What is Hexadoc?","permalink":"/docs/Getting Started/1"}}}}')}}]);
