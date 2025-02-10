@@ -1,0 +1,31 @@
+name: Deploy Docusaurus site
+
+on:
+  push:
+    branches:
+      - develop # Trigger the action when there's a push to the 'develop' branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # GitHub Action runs on Ubuntu
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2 # Checkout the code from the repository
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "22" # Use the version of Node.js that's compatible with Docusaurus
+
+      - name: Install dependencies
+        run: npm install # Install the required dependencies
+
+      - name: Build Docusaurus
+        run: npm run build # Build the static site
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3 # Action to deploy to GitHub Pages
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Token for authentication
+          publish_dir: ./build # The directory containing the built site
