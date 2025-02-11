@@ -1,0 +1,278 @@
+.wrapper {
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-surface-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  resize: both;
+  min-width: 300px;
+  min-height: 400px; /* Increased minimum height */
+  height: 500px; /* Default height */
+  max-width: 100%;
+}
+
+.wrapper:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  cursor: se-resize;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    transparent 50%,
+    var(--ifm-color-emphasis-300) 50%,
+    var(--ifm-color-emphasis-300) 100%
+  );
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.wrapper:hover::after {
+  opacity: 1;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Equal width columns */
+  height: 100%;
+  min-height: 200px;
+  background: var(--ifm-background-surface-color);
+}
+
+.editors {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--ifm-color-emphasis-300);
+  resize: horizontal;
+  overflow: auto;
+  min-width: 300px;
+  background: var(--ifm-pre-background);
+}
+
+.editorSection {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex: 1;
+  height: 33.33%; /* Equal height sections */
+  min-height: 100px;
+  background: var(--ifm-pre-background);
+}
+
+.editorSection.collapsed {
+  flex: 0;
+  min-height: 40px;
+}
+
+.editorHeader {
+  height: 40px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  background: var(--ifm-background-surface-color);
+}
+
+.editorTab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+  height: 30px;
+  padding: 0 16px;
+  border: none;
+  background: transparent;
+  color: var(--ifm-color-emphasis-700);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: var(--ifm-font-family-base);
+  border-radius: 6px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 8px;
+  letter-spacing: 0.3px;
+}
+
+.editorTab:hover {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-primary);
+}
+
+.editorTab.active {
+  color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary-contrast-background);
+  font-weight: 600;
+}
+
+.toggleIcon {
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0.7;
+  font-weight: bold;
+}
+
+.editorContainer {
+  position: relative;
+  min-height: 100px;
+  flex: 1;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  resize: vertical;
+  overflow: auto;
+}
+
+.editorContainer:last-child {
+  border-bottom: none;
+}
+
+.editor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  background: var(--ifm-pre-background);
+  color: var(--ifm-color-content);
+  border: none;
+  resize: none;
+  outline: none;
+  tab-size: 2;
+}
+
+/* Custom resize handle */
+.editorContainer::-webkit-resizer {
+  background-color: var(--ifm-color-emphasis-200);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+/* Tabs - CodePen style */
+.container :global(.tabs) {
+  margin: 0;
+  height: 40px;
+  background: var(--ifm-color-emphasis-100);
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.container :global(.tabs__item) {
+  padding: 0.5rem 1rem;
+  height: 40px;
+  font-size: 0.85rem;
+  border-right: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 0;
+  margin: 0;
+}
+
+.container :global(.tabs__item--active) {
+  background: var(--ifm-pre-background);
+  border-bottom: none;
+}
+
+/* Preview */
+.preview {
+  background-color: white;
+  overflow: auto;
+  height: 100%;
+  padding: 2rem;
+  border-left: 1px solid var(--ifm-color-emphasis-300);
+  transition: background-color 0.3s ease;
+}
+
+/* Scrollbars */
+.editor::-webkit-scrollbar,
+.preview::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.editor::-webkit-scrollbar-track,
+.preview::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.editor::-webkit-scrollbar-thumb,
+.preview::-webkit-scrollbar-thumb {
+  background: var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.editor::-webkit-scrollbar-thumb:hover,
+.preview::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-color-emphasis-400);
+}
+
+/* Dark Mode */
+[data-theme="dark"] .preview {
+  /* Remove the dark background */
+  background: #ffffff;
+  /* Add a stronger border in dark mode for better contrast */
+  border-left: 1px solid var(--ifm-color-emphasis-200);
+}
+
+[data-theme="dark"] .editor {
+  background: var(--ifm-pre-background);
+  color: var(--ifm-color-content);
+}
+
+[data-theme="dark"] .editorTab.active {
+  background: var(--ifm-color-primary-darker);
+  color: white;
+}
+
+[data-theme="dark"] .editors {
+  background: var(--ifm-pre-background);
+  border-right: 1px solid var(--ifm-color-emphasis-300);
+}
+
+[data-theme="dark"] .editorHeader {
+  background: var(--ifm-background-surface-color);
+}
+
+[data-theme="dark"] .preview {
+  background: white;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 90vh;
+  }
+
+  .editors {
+    resize: none;
+    height: 50%;
+    border-right: none;
+    border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  }
+
+  .wrapper {
+    resize: vertical;
+    border-radius: 6px;
+    min-height: 600px;
+    height: 600px;
+  }
+
+  .editorTab {
+    font-size: 0.85rem;
+  }
+
+  .editor {
+    font-size: 13px;
+  }
+}
