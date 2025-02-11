@@ -13,8 +13,8 @@ const LiveCodeBlock = ({
   // Add visibility states
   const [visiblePanels, setVisiblePanels] = useState({
     html: true,
-    css: true,
-    js: true,
+    css: false,
+    js: false,
   });
 
   const togglePanel = (panel) => {
